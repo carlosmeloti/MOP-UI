@@ -157,6 +157,16 @@ export class AppMonitoramento{
   txLocal: string;
 }
 
+export class AppAvaliacao{
+  cdAvaliacao: number;
+  cdMonitoramento= new AppMonitoramento();
+  cdEmpresa = new Cadempresa();
+  nmAvaliacao: string;
+  dtInicio: Date;
+  dtFim: Date;
+}
+
+
 
 
 

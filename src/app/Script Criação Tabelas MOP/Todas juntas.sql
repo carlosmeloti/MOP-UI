@@ -4301,10 +4301,11 @@ INSERT INTO d04_local2_m ( r15_cdempresa, r15_cdverificador  , r15_cdtipoverific
 
 CREATE TABLE d18_monitoramento (
 	d18_cdmonitoramento BIGSERIAL,
+	d18_cdtemplate BIGINT,
 	d18_cdempresa BIGINT,
 	d18_nmmonitoramento VARCHAR(200),
 	d18_cdtipoverificador BIGINT,
-	d18_dtcriacao DATETIME,
+	d18_dtcriacao DATE,
 	d18_txlocal VARCHAR(1000),
 	
 
@@ -4312,6 +4313,24 @@ PRIMARY KEY(d18_cdmonitoramento),
 
 CONSTRAINT empresa_monit_fk FOREIGN KEY (d18_cdempresa) REFERENCES d24_empresa(d24_cdempresa),
 CONSTRAINT tipoverificador_fk FOREIGN KEY (d18_cdtipoverificador) REFERENCES d02_tipo_verificador(d02_cdtipoverificador)
+);
+
+
+INSERT INTO d18_monitoramento (d18_cdtemplate, d18_cdempresa, d18_nmmonitoramento, d18_cdtipoverificador, d18_dtcriacao, d18_txlocal) VALUES (1, 1, 'Monitoramento de Teste', 1, '12/09/2019', 'Embrapa');
+
+CREATE TABLE d19_avaliacao (
+
+	d19_cdavaliacao BIGSERIAL,
+	d19_cdmonitoramento BIGINT,
+	d19_cdempresa BIGINT,
+	d19_nmavaliacao VARCHAR(200),
+	d19_dtinicio DATE,
+	d19_dtfim DATE,
+
+PRIMARY KEY(d19_cdavaliacao),
+
+CONSTRAINT empresa_avaliacao_fk FOREIGN KEY (d19_cdavaliacao) REFERENCES d24_empresa(d24_cdempresa),
+CONSTRAINT monitoramento_fk FOREIGN KEY (d19_cdmonitoramento) REFERENCES d18_monitoramento(d18_cdmonitoramento)
 );
 
 

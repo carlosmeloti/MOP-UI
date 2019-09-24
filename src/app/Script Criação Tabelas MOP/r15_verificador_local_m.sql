@@ -9,6 +9,9 @@
 	r15_txmetodologia VARCHAR(700),
 	r15_cdfrequencia BIGINT,
 	r15_cdamostragem BIGINT,
+	r15_cdmaterial1 BIGINT,
+	r15_cdmaterial2 BIGINT,
+	r15_cdmaterial1 BIGINT,
 
 PRIMARY KEY (r15_cdempresa,r15_cdverificador,r15_cdtipoverificador,r15_cdlocal1,r15_cdlocal2,r15_cdlocal3),
 		
@@ -16,6 +19,9 @@ CONSTRAINT local3_fk FOREIGN KEY (r15_cdempresa, r15_cdlocal1, r15_cdlocal2, r15
 CONSTRAINT amostragem_fk FOREIGN KEY (r15_cdamostragem) REFERENCES d06_amostragem_m(d06_cdamostragem),
 CONSTRAINT tipodemetodo_fk FOREIGN KEY (r15_cdtipometodo) REFERENCES d07_tipo_metodo_m(d07_cdtipometodo),
 CONSTRAINT frequencia_fk FOREIGN KEY (r15_cdfrequencia) REFERENCES d08_frequencia_m(d08_cdfrequencia),
+CONSTRAINT material1_fk FOREIGN KEY (r15_cdmaterial1) REFERENCES d09_material_m(d09_cdmaterial),
+CONSTRAINT material2_fk FOREIGN KEY (r15_cdmaterial2) REFERENCES d09_material_m(d09_cdmaterial),
+CONSTRAINT material3_fk FOREIGN KEY (r15_cdmaterial3) REFERENCES d09_material_m(d09_cdmaterial),
 CONSTRAINT verificador_m_fk FOREIGN KEY (r15_cdempresa, r15_cdverificador, r15_cdtipoverificador) REFERENCES p01_verificador_m(p01_cdempresa, p01_cdverificador, p01_cdtipoverificador)
 ); 
 

@@ -114,6 +114,7 @@ export class AppmonitoramentoComponent  {
         })
         .catch(erro => this.errorHandler.handle(erro));
     }
+
     aoMudarPagina(event: LazyLoadEvent) {
       const page = event.first / event.rows;
       this.pesquisar(page);

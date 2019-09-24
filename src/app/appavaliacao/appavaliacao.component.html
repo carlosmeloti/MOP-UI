@@ -1,34 +1,56 @@
 <div class="container">
-  <p-card  [style]="{width: 'px'}" styleClass="ui-card-shadow">
-    <div class="ui-g">
-        <div class="ui-g-12">
+  <p-card [style]="{width: 'px'}" styleClass="ui-card-shadow">
+      <form #f="ngForm" autocomplete="off" (ngSubmit)="pesquisarMon()">
+    <div class="ui-g-4">
+
             <label style="display: block">Monitoramento: </label>
-            <p-dropdown [options]="cities1" [(ngModel)]="selectedCity1"></p-dropdown>
-        </div>
+            <p-dropdown [options]="appmonitoramento" name="appmonitoramento" placeholder="Selecione"
+              [style]="{'width':'320px'}" [(ngModel)]="appavaliacaoSalvar.cdMonitoramento.cdMonitoramento"></p-dropdown>
+          </div>
+          <div class="ui-g-8 ">
+            <br />
+            <button type="button" style="width: 200px" pButton label="Escolher Monitoramento"
+            type="submit"></button>
+          </div>
+          </form>
+    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
+      <div class="ui-g">
         <div class="ui-g-1 ui-fluid">
 
-            <label style="display: block">Código: </label>
-            <input type="text" pInputText style="width: 75px" />
+          <label style="display: block">Código: </label>
+          <input type="text" name="codigo" [(ngModel)]="appavaliacaoSalvar.cdAvalacao" pInputText style="width: 75px" />
         </div>
         <div class="ui-g-7 ui-fluid">
-            <label style="display: block">Avaliação: </label>
-            <input type="text" pInputText  />
+          <label style="display: block">Avaliação: </label>
+          <input type="text" name ="nmAvaliacao"  [(ngModel)]="appavaliacaoSalvar.nmAvalacao" pInputText />
         </div>
         <div class="ui-g-2 ui-fluid">
-            <label style="display: block">Data Início </label>
-            <p-calendar [(ngModel)]="date3" dateFormat="dd.mm.yy" [showIcon]="true"></p-calendar>
+          <label style="display: block">Data Início </label>
+          <p-calendar [(ngModel)]="date3" name="dtInicio"  [(ngModel)]="appavaliacaoSalvar.dtInicio" dateFormat="dd.mm.yy" [showIcon]="true"></p-calendar>
         </div>
         <div class="ui-g-2 ui-fluid">
-            <label style="display: block">Data Fim </label>
-            <p-calendar [(ngModel)]="date3" dateFormat="dd.mm.yy" [showIcon]="true"></p-calendar>
+          <label style="display: block">Data Fim </label>
+          <p-calendar [(ngModel)]="date3" name="dtFim" [(ngModel)]="appavaliacaoSalvar.dtFim" dateFormat="dd.mm.yy" [showIcon]="true"></p-calendar>
         </div>
 
+        <div class="ui-g-10 ui-fluid">
+          </div>
+          <div class="ui-g-2 ui-fluid">
+              <br>
+              <button pButton type="submit" label="Salvar" class="ui-button-raised ui-button-success" [disabled]="!appavaliacaoSalvar.nmAvaliacao"></button>
+
+          </div>
+
+      </div>
+
+    </form>
+    <div class="ui-g">
         <div class="ui-g-12">
+          <p-table [value]="appavaliacao" [paginator]="true" [rows]="filtro.size" [responsive]="true" [lazy]="true"
+            [totalRecords]="tatalRegistros" (onLazyLoad)="aoMudarPagina($event)" #tabela>
 
-            <p-table [value]="appavaliacao" [paginator]="true" [rows]="5"  [responsive]="true">
-
-                <ng-template pTemplate="header">
-                  <tr>
+            <ng-template pTemplate="header">
+                <tr>
                     <th style="width: 70px">Codigo</th>
                     <th>Avaliação</th>
                     <th>Monitoramento</th>
@@ -36,21 +58,28 @@
                     <th>Fim</th>
                     <th style=" width: 140px"></th>
                   </tr>
-                </ng-template>
-                <ng-template pTemplate="body" let-avaliacao>
-                  <tr>
-                    <th>{{monitoramento.codigo}}</th>
-                    <th>{{monitoramento.modmonitoramento}}</th>
-                    <th>{{monitoramento.modmonitoramento}}</th>
-                    <th>
-                        <a pButton icon="pi pi-pencil" pTooltip="Editar Empresa" tooltipPosition="top"></a>
-                        <button pButton icon="pi pi-trash" style="margin-left: 10px" pTooltip="Excluir Empresa" tooltipPosition="top"></button>
-                    </th>
-                  </tr>
-                </ng-template>
-              </p-table>
+            </ng-template>
+            <ng-template pTemplate="body" let-appmonitoramento>
+              <tr>
+                <th>{{appmonitoramento.cdTemplate.cdTemplate}}</th>
+                <th>{{appmonitoramento.cdTipoDeVerificador.nmTipoDeVerificador}}</th>
+                <th>{{appmonitoramento.nmMonitoramento}}</th>
+                <th>{{appmonitoramento.txLocal}}</th>
+                <th>{{appmonitoramento.dtCriacao}}</th>
+                <!--<th style="text-align: left">{{material.nmMaterial}}</th>-->
+                <th>
+                  <a pButton icon="pi pi-pencil" pTooltip="Editar Material" tooltipPosition="top"
+                    [routerLink]="['/appmonitoramento', appmonitoramento.cdMonitoramento]"></a>
+                  <button pButton icon="pi pi-trash" style="margin-left: 10px" pTooltip="Excluir Monitoramento"
+                    tooltipPosition="top" (click)="confirmarExclusao(appmonitoramento)"></button>
+                </th>
+              </tr>
+            </ng-template>
+          </p-table>
 
         </div>
-    </div>
+      </div>
+
+
   </p-card>
 </div>
