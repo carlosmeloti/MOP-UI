@@ -13,7 +13,7 @@ export class Modlocal1Filtro{
 @Injectable()
 export class Modlocal1Service {
 
-  modlocal1URL = 'http://10.132.90.58:8081/unidadedeavaliacao';
+  modlocal1URL = 'http://localhost:8081/unidadedeavaliacao';
 
 
   constructor(private http: Http) { }

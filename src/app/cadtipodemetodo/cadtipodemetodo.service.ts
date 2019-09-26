@@ -11,7 +11,7 @@ export class CadtipodemetodoFiltro{
 
 @Injectable()
 export class CadtipodemetodoService {
-  cadtipodemetodoURL = 'http://10.132.90.58:8081/cadtipodemetodo';
+  cadtipodemetodoURL = 'http://localhost:8081/cadtipodemetodo';
 
 
   constructor(private http: Http) { }
