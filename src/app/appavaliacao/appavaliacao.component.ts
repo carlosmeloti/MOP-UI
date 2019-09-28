@@ -7,6 +7,7 @@ import { ToastyService } from 'ng2-toasty';
 import { ActivatedRoute } from '@angular/router';
 import { ErrorHandlerService } from '../core/error-handler.service';
 import { AppavaliacaoService, AppAvaliacaoFiltro } from './appavaliacao.service';
+import { FormControl } from '@angular/forms';
 
 
 @Component({
@@ -40,16 +41,28 @@ export class AppavaliacaoComponent  {
     this.pesquisarMon();
     this.carregarAppMonitoramento();
     this.carregarEmpresas();
+    
+
+    
     // this.pesquisar();
     const codigoAppAvaliacao = this.route.snapshot.params['codigo'];
     //  se houver um id entra no metodo de carregar valores
     if (codigoAppAvaliacao) {
-    //  this.carregarAppAvaliacao(codigoAppAvaliacao);
+       this.carregarAppavaliacao(codigoAppAvaliacao);
     }
   }
 
   get editando() {
     return Boolean(this.appavaliacaoSalvar.cdAvaliacao)
+  }
+
+  //Metodo para carregar valores
+  carregarAppavaliacao(cdAvaliacao: number) {
+    this.apavaliacaoService.buscarPorCodigo(cdAvaliacao)
+      .then(appavaliacao => {
+        this.appavaliacaoSalvar = appavaliacao;
+      })
+      .catch(erro => this.errorHandler.handle(erro));
   }
 
   carregarEmpresas() {
@@ -77,6 +90,95 @@ export class AppavaliacaoComponent  {
     this.apavaliacaoService.pesquisarMon(filtro)
       .then(appavaliacao => this.appavaliacao = appavaliacao);
   }
+  pesquisar() {
+
+    const filtro: AppAvaliacaoFiltro = {
+      cdMonitoramento: this.cdMonitoramento,
+      nmMonitoramento: this.nmMonitoramento
+    } 
+    this.apavaliacaoService.pesquisar(filtro)
+      .then(appavaliacao => this.appavaliacao = appavaliacao);
+  }
+
+
+  confirmarExclusao(appavaliacao: any) {
+    this.confirmation.confirm({
+      message: 'Tem certeza que deseja excluir?',
+      accept: () => {
+        this.excluir(appavaliacao);
+      }
+    });
+  }
+
+  excluir(appavaliacao: any) {
+
+    this.apavaliacaoService.excluir(appavaliacao.cdAvaliacao)
+      .then(() => {
+        if (this.grid.first === 0) {
+          this.pesquisarMon();
+        } else {
+          this.grid.first = 0;
+          this.pesquisarMon();
+        }
+        this.toasty.success('Avaliação excluída com sucesso!');
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+
+  }
+
+  salvar(form: FormControl) {
+
+    if (this.editando) {
+      this.confirmarAlterar(form);
+    } else {
+      this.confirmarSalvar(form);
+    }
+
+  }
+
+
+  confirmarSalvar(appavaliacao: any) {
+    this.confirmation.confirm({
+      message: 'Tem certeza que deseja salvar?',
+      accept: () => {
+        this.adicionarAppavaliacao(appavaliacao);
+      }
+    });
+  }
+
+  confirmarAlterar(appavaliacao: any) {
+    this.confirmation.confirm({
+      message: 'Tem certeza que deseja alterar?',
+      accept: () => {
+        this.atualizarAppavaliacao(appavaliacao);
+      }
+    });
+  }
+
+  adicionarAppavaliacao(form: FormControl) {
+
+    this.apavaliacaoService.adicionar(this.appavaliacaoSalvar)
+      .then(() => {
+        this.toasty.success("Avaliação cadastrada com sucesso!");
+        form.reset();
+        this.appavaliacaoSalvar = new AppAvaliacao();
+        this.pesquisar();
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  atualizarAppavaliacao(form: FormControl) {
+    this.apavaliacaoService.atualizar(this.appavaliacaoSalvar)
+      .then(appavaliacao => {
+        this.appavaliacaoSalvar = appavaliacao;
+
+        this.toasty.success('Avaliação alterada com sucesso!');
+
+      })
+      .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  
 
 
 }
