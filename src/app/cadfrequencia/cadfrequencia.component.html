@@ -7,7 +7,7 @@
         </div>
         <div class="ui-g-12 ui-fluid">
           <label style="display: block">Código: </label>
-          <input type="text" name="codigo" pInputText style="width: 50px" [(ngModel)]="frequenciaSalvar.cdFrequencia" />
+          <input type="text" name="codigo" [readonly]="true" pInputText style="width: 50px" [(ngModel)]="frequenciaSalvar.cdFrequencia" />
         </div>
         <div class="ui-g-3 ui-fluid">
           <label>Empresa</label>

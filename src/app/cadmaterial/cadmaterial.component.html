@@ -7,7 +7,7 @@
         </div>
         <div class="ui-g-12 ui-fluid">
           <label style="display: block">Código: {{ editando ? ' - Editando - ' : '' }} </label>
-          <input type="text" name="codigo" style="width: 50px" [(ngModel)]="materialSalvar.cdMaterial" />
+          <input type="text" name="codigo" [readonly]="true" style="width: 50px" [(ngModel)]="materialSalvar.cdMaterial" />
         </div>
         <div class="ui-g-3 ui-fluid">
           <label>Empresa</label>

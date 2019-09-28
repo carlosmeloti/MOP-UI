@@ -17,7 +17,8 @@ import { AppavaliacaoService, AppAvaliacaoFiltro } from './appavaliacao.service'
 export class AppavaliacaoComponent  {
 
   tatalRegistros = 0;
-  filtro = new AppAvaliacaoFiltro();
+  nmMonitoramento:string;
+  cdMonitoramento: number;
   appmonitoramento = [];
   appavaliacao = [];
   empresas = [];
@@ -36,7 +37,7 @@ export class AppavaliacaoComponent  {
   ) {}
 
   ngOnInit() {
-
+    this.pesquisarMon();
     this.carregarAppMonitoramento();
     this.carregarEmpresas();
     // this.pesquisar();
@@ -67,11 +68,14 @@ export class AppavaliacaoComponent  {
       .catch(erro => this.errorHandler.handle(erro));
   }
 
-  pesquisarMon(page = 0) {
+ pesquisarMon() {
 
-    this.filtro.page = page;
-    this.apavaliacaoService.pesquisarMon(this.filtro)
-      .then(avaliacao => this.appavaliacao = avaliacao);
+    const filtro: AppAvaliacaoFiltro = {
+      cdMonitoramento: this.cdMonitoramento,
+      nmMonitoramento: this.nmMonitoramento
+    } 
+    this.apavaliacaoService.pesquisarMon(filtro)
+      .then(appavaliacao => this.appavaliacao = appavaliacao);
   }
 
 
