@@ -2521,7 +2521,7 @@ CONSTRAINT tipoverificador_fk FOREIGN KEY (d18_cdtipoverificador) REFERENCES d02
 );
 
 
-INSERT INTO d18_monitoramento (d18_cdtemplate, d18_cdempresa, d18_nmmonitoramento, d18_cdtipoverificador, d18_dtcriacao, d18_txlocal) VALUES (1, 1, 'Monitoramento de Teste', 1, '12/09/2019', 'Embrapa');
+INSERT INTO d18_monitoramento (d18_cdtemplate, d18_cdempresa, d18_nmmonitoramento, d18_cdtipoverificador, d18_dtcriacao, d18_txlocal) VALUES (1, 1, 'Monitoramento de MINHA BENGA', 1, '12/09/2019', 'Embrapa');
 
 
 
@@ -2539,11 +2539,11 @@ CREATE TABLE d19_avaliacao (
 
 PRIMARY KEY(d19_cdavaliacao),
 
-CONSTRAINT empresa_avaliacao_fk FOREIGN KEY (d19_cdavaliacao) REFERENCES d24_empresa(d24_cdempresa),
+CONSTRAINT empresa_avaliacao_fk FOREIGN KEY (d19_cdempresa) REFERENCES d24_empresa(d24_cdempresa),
 CONSTRAINT monitoramento_fk FOREIGN KEY (d19_cdmonitoramento) REFERENCES d18_monitoramento(d18_cdmonitoramento)
 );
 
-
+insert into d19_avaliacao (d19_cdmonitoramento, d19_cdempresa, d19_nmavaliacao, d19_dtinicio, d19_dtfim) VALUES (2 , 1, 'Vasco','28/09/2019','28/09/2019'); 
 
 
 
