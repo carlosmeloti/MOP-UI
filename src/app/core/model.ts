@@ -166,6 +166,25 @@ export class AppAvaliacao{
   dtFim: Date;
 }
 
+export class Modverificadoresdomodelo{
+
+  cdVeriMod: number;
+  cdEmpresa = new Cadempresa();
+  r15_id_Verificador_m = new Verificador_m();
+  cdTipoDeVerificador = new Cadtipodeverificador();
+  cdTemplate = new ModMonitoramentoTemplate();
+  cdNivel1 = new ModNivel1();
+  cdNivel2 = new ModNivel2();
+  cdNivel3 = new ModNivel3();
+  cdNivel4 = new ModNivel4();
+  lgDadosAnaliticos: boolean;
+  lgDadosAgrupados: boolean;
+  txColetaAnalitica: string;
+  txColetaAgrupada: string;
+
+
+}
+
 
 
 

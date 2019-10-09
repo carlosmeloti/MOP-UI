@@ -5,19 +5,19 @@ import { AppAvaliacao } from '../core/model';
 
 
 export class  AppAvaliacaoFiltro {
-  
+
   cdMonitoramento: number;
   nmMonitoramento:string;
-  
-  
- 
+
+
+
 }
 
 
 @Injectable()
 export class AppavaliacaoService {
 
-  appavaliacaoURL = "http://localhost:8081/appavaliacao";
+  appavaliacaoURL = "http://10.132.90.58:8081/appavaliacao";
 
 
   constructor(private http: Http) { }
@@ -45,7 +45,7 @@ export class AppavaliacaoService {
     const headers = new Headers;
     headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
 
-    
+
 
     return this.http.get(`${this.appavaliacaoURL}`, { headers, search: filtro })
       .toPromise()

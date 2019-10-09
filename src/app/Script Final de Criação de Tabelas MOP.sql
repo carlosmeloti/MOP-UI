@@ -9,11 +9,11 @@ CREATE TABLE d24_empresa (
 	d24_txpessoacontato VARCHAR(100),
 	d24_cnpjempresa VARCHAR(50),
 	d24_diretorioarquivos VARCHAR(255),
-	
-	
+
+
 CONSTRAINT  empresa_pk PRIMARY KEY (d24_cdempresa)
-	
-	
+
+
 );
 
 INSERT INTO d24_empresa (d24_cdempresa,d24_nmempresa, d24_nmabreviado, d24_nrtelefone, d24_enderecocompleto, d24_txpessoacontato, d24_cnpjempresa, d24_diretorioarquivos) VALUES (1,'EMPRESA EXEMPLO','EXEMPLO','','','','','databases');
@@ -29,7 +29,7 @@ CREATE TABLE d02_tipo_verificador (
 	d02_rotulonivel3 VARCHAR(200),
 	d02_rotulonivel4 VARCHAR(200),
 	d02_rotulonivel5 VARCHAR(200),
-	
+
 	PRIMARY KEY (d02_cdtipoverificador)
 );
 
@@ -43,13 +43,13 @@ INSERT INTO d02_tipo_verificador (d02_cdtipoverificador, d02_nmtipoverificador, 
 
 CREATE TABLE d20_nivel_avaliacao (
 
-	d20_cdnivelavaliacao BIGSERIAL,	
+	d20_cdnivelavaliacao BIGSERIAL,
 	d20_nmnivelavaliacao VARCHAR(50),
 	d20_sigla VARCHAR(20),
 	d20_txdescricao VARCHAR(255),
 
 	PRIMARY KEY (d20_cdnivelavaliacao)
-		
+
 );
 
 INSERT INTO d20_nivel_avaliacao (d20_nmnivelavaliacao, d20_sigla, d20_txdescricao ) VALUES ('Ação corretiva próxima safra','AC/PS', 'Providências relacionadas ao verificador que devem ser cumpridas até a próxima safra.');
@@ -172,7 +172,7 @@ CREATE TABLE p01_verificador_m (
 	p01_cdverificador BIGINT,
 	p01_cdtipoverificador BIGINT,
 	p01_codalfa VARCHAR(20),
-	p01_cdnivelavaliacao BIGINT,	
+	p01_cdnivelavaliacao BIGINT,
 	p01_nmverificador VARCHAR(1000),
 	p01_limiar VARCHAR(1000),
 	p01_graco NUMERIC(5,2),
@@ -1894,7 +1894,7 @@ INSERT INTO d03_local1_m ( d03_cdempresa, d03_cdlocal1,d03_nmlocal1) VALUES ('1'
 -------------------------------------------Local 2 --------------------------------------
 
 CREATE TABLE d04_local2_m(
-	d04_cdempresa BIGINT, 
+	d04_cdempresa BIGINT,
 	d04_cdlocal1 BIGINT,
 	d04_cdlocal2 BIGSERIAL,
 	d04_nmlocal2 VARCHAR(200),
@@ -2138,7 +2138,7 @@ CREATE TABLE d12_nivel3_m(
 	d12_cdnivel3 BIGSERIAL,
 	d12_nmnivel3 VARCHAR(200),
 
-	
+
 PRIMARY KEY (d12_cdnivel3),
 CONSTRAINT nivel1_empresa_fk FOREIGN KEY (d12_cdempresa) REFERENCES d24_empresa(d24_cdempresa),
 CONSTRAINT nivel1_fk FOREIGN KEY (d12_cdnivel1) REFERENCES d10_nivel1_m(d10_cdnivel1),
@@ -2218,7 +2218,7 @@ CREATE TABLE d13_nivel4_m(
 	d13_cdnivel4 BIGSERIAL,
 	d13_nmnivel4 VARCHAR(200),
 
-	
+
 PRIMARY KEY (d13_cdnivel4),
 CONSTRAINT nivel1_empresa_fk FOREIGN KEY (d13_cdempresa) REFERENCES d24_empresa(d24_cdempresa),
 CONSTRAINT nivel1_fk FOREIGN KEY (d13_cdnivel1) REFERENCES d10_nivel1_m(d10_cdnivel1),
@@ -2462,8 +2462,8 @@ CONSTRAINT verificador_local_frequencia_fk FOREIGN KEY (r15_cdfrequencia) REFERE
 CONSTRAINT material1_fk FOREIGN KEY (r15_cdmaterial1) REFERENCES d09_material_m(d09_cdmaterial),
 CONSTRAINT material2_fk FOREIGN KEY (r15_cdmaterial2) REFERENCES d09_material_m(d09_cdmaterial),
 CONSTRAINT material3_fk FOREIGN KEY (r15_cdmaterial3) REFERENCES d09_material_m(d09_cdmaterial)
-	
-); 
+
+);
 
 
 ---------------------------------- App Monitoramento ---------------------
@@ -2475,7 +2475,7 @@ CREATE TABLE d18_monitoramento (
 	d18_cdtipoverificador BIGINT,
 	d18_dtcriacao DATE,
 	d18_txlocal VARCHAR(1000),
-	
+
 
 PRIMARY KEY(d18_cdmonitoramento),
 
@@ -2484,7 +2484,7 @@ CONSTRAINT tipoverificador_fk FOREIGN KEY (d18_cdtipoverificador) REFERENCES d02
 );
 
 
----------------------------------- App Template ---------------------
+---------------------------------- Mod Modelo Template ---------------------
 
 CREATE TABLE d14_template(
 	d14_cdtemplate BIGSERIAL,
@@ -2501,6 +2501,74 @@ INSERT INTO d14_template(d14_nmtemplate, d14_cdtipoverificador) VALUES('MODELO D
 INSERT INTO d14_template(d14_nmtemplate, d14_cdtipoverificador) VALUES('MODELO DE AVALIAÇÃO DE SUSTENTABILIDADE','5');
 INSERT INTO d14_template(d14_nmtemplate, d14_cdtipoverificador) VALUES('MODELO DE AVALIAÇÃO DE IMPACTOS','2');
 
+-------------------------------- Mod Verificadores do modelo ------------------------------------
+
+CREATE TABLE r17_verificador_template_m (
+	r17_cdverimod BIGSERIAL,
+	r17_cdempresa BIGINT,
+	r17_cdverificador BIGINT,
+	r17_cdtipoverificador BIGINT,
+	r17_cdtemplate BIGINT,
+	r17_cdnivel1 BIGINT,
+	r17_cdnivel2 BIGINT,
+	r17_cdnivel3 BIGINT,
+	r17_cdnivel4 BIGINT,
+	r17_lgdadosanaliticos BOOLEAN,
+	r17_lgdadosagrupados BOOLEAN,
+	r17_txcoletaanalitica VARCHAR(200),
+	r17_txcoletaagrupada VARCHAR(200),
+
+	PRIMARY KEY(r17_cdverimod),
+
+
+	CONSTRAINT empresa_verif_temp_fk FOREIGN KEY (r17_cdempresa) REFERENCES d24_empresa(d24_cdempresa),
+	CONSTRAINT verifi_temp_fk FOREIGN KEY (r17_cdverificador) REFERENCES p01_verificador_m(p01_id_Verificador_m),
+	CONSTRAINT tipoverificador_temp_fk FOREIGN KEY (r17_cdtipoverificador) REFERENCES d02_tipo_verificador(d02_cdtipoverificador),
+	CONSTRAINT modmonitoramento_temp_fk FOREIGN KEY (r17_cdtemplate) REFERENCES d14_template(d14_cdtemplate)
+
+);
+
+-- teste
+INSERT INTO r17_verificador_template_m(
+            r17_cdempresa, r17_cdverificador, r17_cdtipoverificador,
+            r17_cdtemplate, r17_cdnivel1, r17_cdnivel2, r17_cdnivel3, r17_cdnivel4,
+            r17_lgdadosanaliticos, r17_lgdadosagrupados, r17_txcoletaanalitica,
+            r17_txcoletaagrupada)
+    VALUES (1, 1, 1,
+            1, 1, 1, 1, 1,
+            TRUE, FALSE, 'Teste', 'Teste');
+
+
+-------------------------------- App Verificadores do modelo ------------------------------------
+
+CREATE TABLE r17_verificador_monitoramento (
+	r17_cdverimod BIGSERIAL,
+	r17_cdempresa BIGINT,
+	r17_cdverificador BIGINT,
+	r17_cdtipoverificador BIGINT,
+	r17_cdmonitoramento BIGINT,
+	r17_cdnivel1 BIGINT,
+	r17_cdnivel2 BIGINT,
+	r17_cdnivel3 BIGINT,
+	r17_cdnivel4 BIGINT,
+	r17_lgdadosanaliticos BOOLEAN,
+	r17_lgdadosagrupados BOOLEAN,
+	r17_txcoletaanalitica VARCHAR(200),
+	r17_txcoletaagrupada VARCHAR(200),
+
+	PRIMARY KEY(r17_cdverimod),
+
+
+	CONSTRAINT empresa_verif_monit_fk FOREIGN KEY (r17_cdempresa) REFERENCES d24_empresa(d24_cdempresa),
+	CONSTRAINT verifi_fk FOREIGN KEY (r17_cdverificador) REFERENCES p01_verificador_m(p01_id_Verificador_m),
+	CONSTRAINT tipoverificador_fk FOREIGN KEY (r17_cdtipoverificador) REFERENCES d02_tipo_verificador(d02_cdtipoverificador),
+	CONSTRAINT appmonitoramento_fk FOREIGN KEY (r17_cdmonitoramento) REFERENCES d18_monitoramento(d18_cdmonitoramento)
+
+
+
+
+);
+
 -------------- App Monitoramento -----
 
 
@@ -2512,7 +2580,7 @@ CREATE TABLE d18_monitoramento (
 	d18_cdtipoverificador BIGINT,
 	d18_dtcriacao DATE,
 	d18_txlocal VARCHAR(1000),
-	
+
 
 PRIMARY KEY(d18_cdmonitoramento),
 
@@ -2543,7 +2611,7 @@ CONSTRAINT empresa_avaliacao_fk FOREIGN KEY (d19_cdempresa) REFERENCES d24_empre
 CONSTRAINT monitoramento_fk FOREIGN KEY (d19_cdmonitoramento) REFERENCES d18_monitoramento(d18_cdmonitoramento)
 );
 
-insert into d19_avaliacao (d19_cdmonitoramento, d19_cdempresa, d19_nmavaliacao, d19_dtinicio, d19_dtfim) VALUES (2 , 1, 'Vasco','28/09/2019','28/09/2019'); 
+insert into d19_avaliacao (d19_cdmonitoramento, d19_cdempresa, d19_nmavaliacao, d19_dtinicio, d19_dtfim) VALUES (1 , 1, 'Vasco','28/09/2019','28/09/2019');
 
 
 

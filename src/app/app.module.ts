@@ -1,3 +1,4 @@
+import { ModverificadoresdomodeloService } from './modverificadoresdomodelo/modverificadoresdomodelo.service';
 import { AppavaliacaoService } from './appavaliacao/appavaliacao.service';
 import { AppavaliacaoComponent } from './appavaliacao/appavaliacao.component';
 import { AppmonitoramentoComponent } from './appmonitoramento/appmonitoramento.component';
@@ -126,6 +127,8 @@ const routes: Routes = [
   { path: 'modnivel4/:codigo', component:Modnivel4Component},
   { path: 'modmonitoramentotemplate', component:ModmonitoramentotemplateComponent},
   { path: 'modmonitoramentotemplate/:codigo', component:ModmonitoramentotemplateComponent},
+  { path: 'modverificadoresmonitoramentotemplate', component:ModverificadoresdomodeloComponent},
+  { path: 'modverificadoresmonitoramentotemplate/:codigo', component:ModverificadoresdomodeloComponent},
   { path: 'associarverificador', component:AssociarverificadorComponent},
   { path: 'associarverificador/:codigo', component:AssociarverificadorComponent},
   { path: 'appmonitoramento', component:AppmonitoramentoComponent},
@@ -218,6 +221,7 @@ const routes: Routes = [
     Modnivel3Service,
     Modnivel4Service,
     ModmonitoramentotemplateService,
+    ModverificadoresdomodeloService,
     AppmonitoramentoService,
     AppavaliacaoService,
     AssociarverificadorService,
