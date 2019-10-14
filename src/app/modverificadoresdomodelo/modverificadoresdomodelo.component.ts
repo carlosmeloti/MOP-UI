@@ -25,6 +25,7 @@ export class ModverificadoresdomodeloComponent implements OnInit {
   MonitoramentoTemplate = [];
   verificadorDoModelo = [];
   empresas = [];
+  selectedValues: string[] = ['Coleta de Dados Analíticos','Coleta de Dados Agrupados'];
 
   modverificadoresdomodeloSalvar = new Modverificadoresdomodelo;
 
