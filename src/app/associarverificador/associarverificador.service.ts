@@ -10,7 +10,7 @@ export class CadverificadorLocalFiltro{
 @Injectable()
 export class AssociarverificadorService {
 
-  verificadorlocalmURL = 'http://localhost:8081/verificador_local_m';
+  verificadorlocalmURL = 'http://10.132.90.58:8081/verificador_local_m';
 
   constructor(private http: Http) { }
 

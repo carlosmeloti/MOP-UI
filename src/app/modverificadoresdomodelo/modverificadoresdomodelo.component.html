@@ -6,13 +6,15 @@
           <h2>Verificadores por Modelo</h2>
         </div>
 
-        <div class="ui-g-4 ui-fluid">
+        <div class="ui-g-4">
           <label style="display: block">Escolha um modelo de Monitoramento: </label>
-          <p-dropdown [options]="MonitoramentoTemplate" name="MonitoramentoTemplate" [(ngModel)]="cdMonitoramento"
+          <p-dropdown [options]="MonitoramentoTemplate" name="MonitoramentoTemplate" [(ngModel)]="cdTemplate"
             placeholder="Selecione" [style]="{'width':'370px'}"></p-dropdown>
         </div>
-        <div class="ui-g-8 ui-fluid">
-
+        <div class="ui-g-8 ">
+          <br />
+          <button type="button" style="width: 300px" (click)="pesquisarMon()"
+          pButton label="Escolher modelo de Monitoramento" ></button>
         </div>
 
         <div class="ui-g-1 ui-fluid">
@@ -47,29 +49,25 @@
 <div class="ui-g">
   <div class="ui-g-12">
 
-    <p-table [value]="verificadorm" [paginator]="true" [rows]="10" [responsive]="true"
-      [totalRecords]="totalRecords">
+
+      <p-table [value]="verificadordomodelo" [paginator]="true" [rows]="filtro.size" [responsive]="true" [lazy]="true"
+          [totalRecords]="tatalRegistros" (onLazyLoad)="aoMudarPagina($event)" #tabela>
 
       <ng-template pTemplate="header">
         <tr>
           <th style="width: 70px">Cód. Ver.</th>
-          <th style="width: 70px">Cód. Alf.</th>
-          <th style="width: 140px">Cat. Avaliação </th>
-          <th>Verificador</th>
-          <th style=" width: 140px"></th>
+
         </tr>
       </ng-template>
-      <ng-template pTemplate="body" let-verificador>
+      <ng-template pTemplate="body" let-verificadormodelo>
         <tr>
-          <th>{{verificador.cdVerificador}}</th>
-          <th>{{verificador.codalfa}}</th>
-          <th>{{verificador.p01_graco}}</th>
-          <th style="text-align: left">{{verificador.nmverificador}}</th>
+          <th>{{verificadormodelo.cdTemplate}}</th>
+
           <th>
-            <a pButton icon="pi pi-pencil" pTooltip="Editar Verificador" tooltipPosition="top"
+            <!--<a pButton icon="pi pi-pencil" pTooltip="Editar Verificador" tooltipPosition="top"
               [routerLink]="['/verificador_m', verificador.codigo]"></a>
             <button pButton icon="pi pi-trash" style="margin-left: 10px" pTooltip="Excluir Verificador"
-              tooltipPosition="top"></button>
+              tooltipPosition="top"></button>-->
           </th>
         </tr>
       </ng-template>

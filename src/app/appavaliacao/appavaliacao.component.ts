@@ -41,9 +41,9 @@ export class AppavaliacaoComponent  {
     this.pesquisarMon();
     this.carregarAppMonitoramento();
     this.carregarEmpresas();
-    
 
-    
+
+
     // this.pesquisar();
     const codigoAppAvaliacao = this.route.snapshot.params['codigo'];
     //  se houver um id entra no metodo de carregar valores
@@ -86,7 +86,7 @@ export class AppavaliacaoComponent  {
     const filtro: AppAvaliacaoFiltro = {
       cdMonitoramento: this.cdMonitoramento,
       nmMonitoramento: this.nmMonitoramento
-    } 
+    }
     this.apavaliacaoService.pesquisarMon(filtro)
       .then(appavaliacao => this.appavaliacao = appavaliacao);
   }
@@ -95,7 +95,7 @@ export class AppavaliacaoComponent  {
     const filtro: AppAvaliacaoFiltro = {
       cdMonitoramento: this.cdMonitoramento,
       nmMonitoramento: this.nmMonitoramento
-    } 
+    }
     this.apavaliacaoService.pesquisar(filtro)
       .then(appavaliacao => this.appavaliacao = appavaliacao);
   }
@@ -178,7 +178,7 @@ export class AppavaliacaoComponent  {
       .catch(erro => this.errorHandler.handle(erro));
   }
 
-  
+
 
 
 }

@@ -12,7 +12,7 @@ export class AppMonitoramentoFiltro {
 @Injectable()
 export class AppmonitoramentoService {
 
- appmonitoramentoURL = 'http://localhost:8081/appmonitoramento';
+ appmonitoramentoURL = 'http://10.132.90.58:8081/appmonitoramento';
 
   constructor(private http: Http) { }
 

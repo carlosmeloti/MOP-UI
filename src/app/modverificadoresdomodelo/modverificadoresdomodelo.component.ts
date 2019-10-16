@@ -10,6 +10,7 @@ import { ConfirmationService } from 'primeng/components/common/confirmationservi
 import { FormControl } from '@angular/forms';
 import { CadempresaService } from '../cadempresa/cadempresa.service';
 import { ModmonitoramentotemplateService } from '../modmonitoramentotemplate/modmonitoramentotemplate.service';
+import { ModverificadoresdomodeloFiltro, ModverificadoresdomodeloService } from './modverificadoresdomodelo.service';
 
 @Component({
   selector: 'app-modverificadoresdomodelo',
@@ -19,12 +20,15 @@ import { ModmonitoramentotemplateService } from '../modmonitoramentotemplate/mod
 export class ModverificadoresdomodeloComponent implements OnInit {
 
   tatalRegistros = 0;
-  //filtro = new ModverificadoresdomodeloFiltro();
-  nmVerificador: string;
-  appmonitoramento = [];
+
+  filtro = new ModverificadoresdomodeloFiltro();
+  cdTemplate: number;
+  nmVerificador:string;
+
   MonitoramentoTemplate = [];
-  verificadorDoModelo = [];
+  verificadordomodelo = [];
   empresas = [];
+
   selectedValues: string[] = ['Coleta de Dados Analíticos','Coleta de Dados Agrupados'];
 
   modverificadoresdomodeloSalvar = new Modverificadoresdomodelo;
@@ -32,6 +36,7 @@ export class ModverificadoresdomodeloComponent implements OnInit {
   @ViewChild('tabela') grid;
   constructor(
     private tipoDeVerificadores: CadtipodeverificadorService,
+    private modverificadoresdomodeloService: ModverificadoresdomodeloService,
     private cadEmpresaService: CadempresaService,
     private toasty: ToastyService,
     private confirmation: ConfirmationService,
@@ -42,6 +47,7 @@ export class ModverificadoresdomodeloComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+    this.pesquisarMon();
 
     this.carregarMonitoramentoTemplate();
   }
@@ -52,6 +58,25 @@ export class ModverificadoresdomodeloComponent implements OnInit {
         this.MonitoramentoTemplate = modmonitoramento.map(c => ({ label: c.cdTemplate + " - " + c.nmTemplate, value: c.cdTemplate }));
       })
       .catch(erro => this.errorHandler.handle(erro));
+  }
+
+  //Metodo para carregar valores
+ // carregarModverificadoresdomodelo(codigo: number) {
+  //  this.modverificadoresdomodeloService.buscarPorCodigo(codigo)
+   //   .then(modnivel1 => {
+    //    this.modNivel1Salvar = modnivel1;
+   //   })
+   //   .catch(erro => this.errorHandler.handle(erro));
+ // }
+
+  pesquisarMon() {
+
+    const filtro: ModverificadoresdomodeloFiltro = {
+      cdTemplate: this.cdTemplate,
+      nmVerificador: this.nmVerificador
+    }
+    this.modverificadoresdomodeloService.pesquisarMon(filtro)
+      .then(modverificadoresdomodelo => this.verificadordomodelo = modverificadoresdomodelo);
   }
 
 }

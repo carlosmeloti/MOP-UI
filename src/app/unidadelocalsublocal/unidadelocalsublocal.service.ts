@@ -17,42 +17,42 @@ export class Modlocal3Filtro {
 @Injectable()
 export class UnidadelocalsublocalService {
 
-  modLocal3URL = 'http://localhost:8081/sublocaldeavaliacao';
+  modLocal3URL = 'http://10.132.90.58:8081/sublocaldeavaliacao';
 
-  modLocal3URL_cdLocal1_1_cdLocal2_1 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=1&cdLocal2=1';
-  modLocal3URL_cdLocal1_1_cdLocal2_2 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=1&cdLocal2=2';
-  modLocal3URL_cdLocal1_1_cdLocal2_3 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=1&cdLocal2=3';
+  modLocal3URL_cdLocal1_1_cdLocal2_1 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=1&cdLocal2=1';
+  modLocal3URL_cdLocal1_1_cdLocal2_2 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=1&cdLocal2=2';
+  modLocal3URL_cdLocal1_1_cdLocal2_3 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=1&cdLocal2=3';
 
-  modLocal3URL_cdLocal1_2_cdLocal2_4 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=2&cdLocal2=4';
-  modLocal3URL_cdLocal1_2_cdLocal2_5 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=2&cdLocal2=5';
+  modLocal3URL_cdLocal1_2_cdLocal2_4 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=2&cdLocal2=4';
+  modLocal3URL_cdLocal1_2_cdLocal2_5 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=2&cdLocal2=5';
 
-  modLocal3URL_cdLocal1_3_cdLocal2_6 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=3&cdLocal2=6';
-  modLocal3URL_cdLocal1_3_cdLocal2_7 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=3&cdLocal2=7';
-  modLocal3URL_cdLocal1_3_cdLocal2_8 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=3&cdLocal2=8';
-  modLocal3URL_cdLocal1_3_cdLocal2_9 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=3&cdLocal2=9';
+  modLocal3URL_cdLocal1_3_cdLocal2_6 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=3&cdLocal2=6';
+  modLocal3URL_cdLocal1_3_cdLocal2_7 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=3&cdLocal2=7';
+  modLocal3URL_cdLocal1_3_cdLocal2_8 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=3&cdLocal2=8';
+  modLocal3URL_cdLocal1_3_cdLocal2_9 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=3&cdLocal2=9';
 
-  modLocal3URL_cdLocal1_4_cdLocal2_10 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=4&cdLocal2=10';
-  modLocal3URL_cdLocal1_4_cdLocal2_11 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=4&cdLocal2=11';
+  modLocal3URL_cdLocal1_4_cdLocal2_10 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=4&cdLocal2=10';
+  modLocal3URL_cdLocal1_4_cdLocal2_11 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=4&cdLocal2=11';
 
-  modLocal3URL_cdLocal1_5_cdLocal2_12 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=5&cdLocal2=12';
-  modLocal3URL_cdLocal1_5_cdLocal2_13 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=5&cdLocal2=13';
-  modLocal3URL_cdLocal1_5_cdLocal2_14 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=5&cdLocal2=14';
-  modLocal3URL_cdLocal1_5_cdLocal2_15 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=5&cdLocal2=15';
+  modLocal3URL_cdLocal1_5_cdLocal2_12 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=5&cdLocal2=12';
+  modLocal3URL_cdLocal1_5_cdLocal2_13 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=5&cdLocal2=13';
+  modLocal3URL_cdLocal1_5_cdLocal2_14 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=5&cdLocal2=14';
+  modLocal3URL_cdLocal1_5_cdLocal2_15 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=5&cdLocal2=15';
 
-  modLocal3URL_cdLocal1_6_cdLocal2_16 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=6&cdLocal2=16';
-  modLocal3URL_cdLocal1_6_cdLocal2_17 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=6&cdLocal2=17';
-  modLocal3URL_cdLocal1_6_cdLocal2_18 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=6&cdLocal2=18';
+  modLocal3URL_cdLocal1_6_cdLocal2_16 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=6&cdLocal2=16';
+  modLocal3URL_cdLocal1_6_cdLocal2_17 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=6&cdLocal2=17';
+  modLocal3URL_cdLocal1_6_cdLocal2_18 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=6&cdLocal2=18';
 
-  modLocal3URL_cdLocal1_7_cdLocal2_19 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=7&cdLocal2=19';
-  modLocal3URL_cdLocal1_7_cdLocal2_20 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=7&cdLocal2=20';
-  modLocal3URL_cdLocal1_7_cdLocal2_21 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=7&cdLocal2=21';
+  modLocal3URL_cdLocal1_7_cdLocal2_19 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=7&cdLocal2=19';
+  modLocal3URL_cdLocal1_7_cdLocal2_20 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=7&cdLocal2=20';
+  modLocal3URL_cdLocal1_7_cdLocal2_21 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=7&cdLocal2=21';
 
-  modLocal3URL_cdLocal1_8_cdLocal2_22 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=8&cdLocal2=22';
-  modLocal3URL_cdLocal1_8_cdLocal2_23 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=8&cdLocal2=23';
-  modLocal3URL_cdLocal1_8_cdLocal2_24 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=8&cdLocal2=24';
+  modLocal3URL_cdLocal1_8_cdLocal2_22 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=8&cdLocal2=22';
+  modLocal3URL_cdLocal1_8_cdLocal2_23 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=8&cdLocal2=23';
+  modLocal3URL_cdLocal1_8_cdLocal2_24 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=8&cdLocal2=24';
 
-  modLocal3URL_cdLocal1_9_cdLocal2_25 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=9&cdLocal2=25';
-  modLocal3URL_cdLocal1_9_cdLocal2_26 = 'http://localhost:8081/sublocaldeavaliacao?cdLocal1=9&cdLocal2=26';
+  modLocal3URL_cdLocal1_9_cdLocal2_25 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=9&cdLocal2=25';
+  modLocal3URL_cdLocal1_9_cdLocal2_26 = 'http://10.132.90.58:8081/sublocaldeavaliacao?cdLocal1=9&cdLocal2=26';
 
   constructor(private http: Http) { }
 
