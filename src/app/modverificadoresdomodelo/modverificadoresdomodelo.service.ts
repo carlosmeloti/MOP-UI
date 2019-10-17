@@ -32,4 +32,20 @@ export class ModverificadoresdomodeloService {
 
   };
 
+  pesquisar(filtro: ModverificadoresdomodeloFiltro): Promise<any> {
+
+    const params = new URLSearchParams;
+    const headers = new Headers;
+    headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
+
+    if (filtro.nmVerificador) {
+      params.set('cdTemplate', filtro.nmVerificador);
+    }
+
+    return this.http.get(`${this.verificadoresModeloUrl}`, { headers, search: filtro })
+      .toPromise()
+      .then(response => response.json().content)
+
+  };
+
 }

@@ -79,4 +79,14 @@ export class ModverificadoresdomodeloComponent implements OnInit {
       .then(modverificadoresdomodelo => this.verificadordomodelo = modverificadoresdomodelo);
   }
 
+  pesquisa() {
+
+    const filtro: ModverificadoresdomodeloFiltro = {
+      cdTemplate: this.cdTemplate,
+      nmVerificador: this.nmVerificador
+    }
+    this.modverificadoresdomodeloService.pesquisar(filtro)
+      .then(modverificadoresdomodelo => this.verificadordomodelo = modverificadoresdomodelo);
+  }
+
 }

@@ -50,25 +50,20 @@
   <div class="ui-g-12">
 
 
-      <p-table [value]="verificadordomodelo" [paginator]="true" [rows]="filtro.size" [responsive]="true" [lazy]="true"
-          [totalRecords]="tatalRegistros" (onLazyLoad)="aoMudarPagina($event)" #tabela>
+    <p-table [value]="verificadordomodelo" [paginator]="true" [rows]="10" [responsive]="true"
+          [totalRecords]="totalRecords">
 
       <ng-template pTemplate="header">
         <tr>
-          <th style="width: 70px">Cód. Ver.</th>
+          <th style="width: 70px">Cód. Empresa.</th>
 
         </tr>
       </ng-template>
       <ng-template pTemplate="body" let-verificadormodelo>
         <tr>
-          <th>{{verificadormodelo.cdTemplate}}</th>
+          <th>{{verificadormodelo.cdEmpresa}}</th>
 
-          <th>
-            <!--<a pButton icon="pi pi-pencil" pTooltip="Editar Verificador" tooltipPosition="top"
-              [routerLink]="['/verificador_m', verificador.codigo]"></a>
-            <button pButton icon="pi pi-trash" style="margin-left: 10px" pTooltip="Excluir Verificador"
-              tooltipPosition="top"></button>-->
-          </th>
+
         </tr>
       </ng-template>
     </p-table>
