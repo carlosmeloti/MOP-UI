@@ -24,6 +24,8 @@ export class ModverificadoresdomodeloComponent implements OnInit {
   filtro = new ModverificadoresdomodeloFiltro();
   cdTemplate: number;
   nmVerificador:string;
+  modverificadoresdomodeloSalvar = new Modverificadoresdomodelo;
+
 
   MonitoramentoTemplate = [];
   verificadordomodelo = [];
@@ -31,7 +33,7 @@ export class ModverificadoresdomodeloComponent implements OnInit {
 
   selectedValues: string[] = ['Coleta de Dados Analíticos','Coleta de Dados Agrupados'];
 
-  modverificadoresdomodeloSalvar = new Modverificadoresdomodelo;
+  
 
   @ViewChild('tabela') grid;
   constructor(
@@ -44,12 +46,9 @@ export class ModverificadoresdomodeloComponent implements OnInit {
     private errorHandler: ErrorHandlerService,
     private modmonitoramentotemplateService: ModmonitoramentotemplateService,
 
-  ) {}
+  ){}
 
   ngOnInit() {
-    this.pesquisarMon();
-
-    this.carregarMonitoramentoTemplate();
   }
 
   carregarMonitoramentoTemplate() {
@@ -69,24 +68,31 @@ export class ModverificadoresdomodeloComponent implements OnInit {
    //   .catch(erro => this.errorHandler.handle(erro));
  // }
 
-  pesquisarMon() {
+  //pesquisarMon() {
 
-    const filtro: ModverificadoresdomodeloFiltro = {
-      cdTemplate: this.cdTemplate,
-      nmVerificador: this.nmVerificador
-    }
-    this.modverificadoresdomodeloService.pesquisarMon(filtro)
-      .then(modverificadoresdomodelo => this.verificadordomodelo = modverificadoresdomodelo);
+   // const filtro: ModverificadoresdomodeloFiltro = {
+    //  cdTemplate: this.cdTemplate,
+    //  nmVerificador: this.nmVerificador
+   // }
+   // this.modverificadoresdomodeloService.pesquisarMon(filtro)
+    //  .then(modverificadoresdomodelo => this.verificadordomodelo = modverificadoresdomodelo);
+   // }
+
+  pesquisar(page = 0){
+
+    this.filtro.page = page;
+
+    this.modverificadoresdomodeloService.pesquisar(this.filtro)
+      .then(resultado => {
+        this.tatalRegistros = resultado.total;
+        this.verificadordomodelo = resultado.verificadordomodelo;
+
+      })
+      .catch(erro => this.errorHandler.handle(erro));
   }
-
-  pesquisa() {
-
-    const filtro: ModverificadoresdomodeloFiltro = {
-      cdTemplate: this.cdTemplate,
-      nmVerificador: this.nmVerificador
-    }
-    this.modverificadoresdomodeloService.pesquisar(filtro)
-      .then(modverificadoresdomodelo => this.verificadordomodelo = modverificadoresdomodelo);
+  aoMudarPagina(event: LazyLoadEvent){
+    const page = event.first / event.rows;
+    this.pesquisar(page);
   }
 
 }

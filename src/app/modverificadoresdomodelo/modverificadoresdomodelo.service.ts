@@ -6,13 +6,15 @@ export class ModverificadoresdomodeloFiltro{
 
   cdTemplate: number;
   nmVerificador:string;
+  page = 0;
+  size = 5;
 
 }
 
 @Injectable()
 export class ModverificadoresdomodeloService {
 
-  verificadoresModeloUrl = "http://10.132.90.58:8081/modverificadoresmonitoramentotemplate";
+  verificadoresModeloUrl = "http://localhost:8081/modverificadoresmonitoramentotemplate";
 
   constructor(private http: Http) { }
 
@@ -36,16 +38,28 @@ export class ModverificadoresdomodeloService {
 
     const params = new URLSearchParams;
     const headers = new Headers;
+
     headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
 
-    if (filtro.nmVerificador) {
+    if (filtro.nmVerificador){
       params.set('cdTemplate', filtro.nmVerificador);
-    }
 
-    return this.http.get(`${this.verificadoresModeloUrl}`, { headers, search: filtro })
-      .toPromise()
-      .then(response => response.json().content)
+  }
 
-  };
+    return this.http.get(`${this.verificadoresModeloUrl}`, {  headers, search: filtro })
+    .toPromise()
+      .then(response => {
+
+          const responseJson = response.json();
+          const verificadoresModelo = responseJson.content;
+
+          const resultado = {
+            verificadoresModelo,
+            total: responseJson.totalElements
+          };
+          return resultado;
+    })
+
+    };
 
 }
