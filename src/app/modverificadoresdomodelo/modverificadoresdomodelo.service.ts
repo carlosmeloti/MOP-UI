@@ -4,8 +4,7 @@ import {Modverificadoresdomodelo} from '../core/model';
 
 export class ModverificadoresdomodeloFiltro{
 
-  cdTemplate: number;
-  nmVerificador:string;
+  txColetaAnalitica: string;
   page = 0;
   size = 5;
 
@@ -14,52 +13,35 @@ export class ModverificadoresdomodeloFiltro{
 @Injectable()
 export class ModverificadoresdomodeloService {
 
-  verificadoresModeloUrl = "http://localhost:8081/modverificadoresmonitoramentotemplate";
+  verificadoresdomodelourl = 'http://10.132.90.58:8081/modverificadoresmonitoramentotemplate';
 
   constructor(private http: Http) { }
-
-  pesquisarMon(filtro: ModverificadoresdomodeloFiltro): Promise<any> {
-
-    const params = new URLSearchParams;
-    const headers = new Headers;
-    headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
-
-    if (filtro.nmVerificador) {
-      params.set('cdTemplate', filtro.nmVerificador);
-    }
-
-    return this.http.get(`${this.verificadoresModeloUrl}`, { headers, search: filtro })
-      .toPromise()
-      .then(response => response.json().content)
-
-  };
 
   pesquisar(filtro: ModverificadoresdomodeloFiltro): Promise<any> {
 
     const params = new URLSearchParams;
     const headers = new Headers;
-
     headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
 
-    if (filtro.nmVerificador){
-      params.set('cdTemplate', filtro.nmVerificador);
+    if (filtro.txColetaAnalitica) {
+      params.set('txColetaAnalitica', filtro.txColetaAnalitica);
+    }
 
-  }
-
-    return this.http.get(`${this.verificadoresModeloUrl}`, {  headers, search: filtro })
-    .toPromise()
+    return this.http.get(`${this.verificadoresdomodelourl}`, { headers, search: filtro })
+      .toPromise()
       .then(response => {
+        const responseJson = response.json();
+        const verificadordomodelo = responseJson.content;
 
-          const responseJson = response.json();
-          const verificadoresModelo = responseJson.content;
+        const resultado = {
+          verificadordomodelo,
+          total: responseJson.totalElements
+        };
+        return resultado;
+      })
 
-          const resultado = {
-            verificadoresModelo,
-            total: responseJson.totalElements
-          };
-          return resultado;
-    })
+  };
 
-    };
+
 
 }

@@ -1,75 +1,41 @@
 <div class="container">
   <p-card [style]="{width: 'px'}" styleClass="ui-card-shadow">
-    <form #f="ngForm" autocomplete="off" (ngSubmit)="salvar(f)">
-      <div class="ui-g">
-        <div class="ui-g-12">
-          <h2>Verificadores por Modelo</h2>
+
+  <div class="ui-g">
+      <div class="ui-g-12">
+
+          <p-table [value]="verificadordomodelo" [paginator]="true" [rows]="filtro.size"  [responsive]="true"
+            [lazy]="true" [totalRecords]="tatalRegistros" (onLazyLoad)="aoMudarPagina($event)" #tabela>
+
+            <ng-template pTemplate="header">
+              <tr>
+                <th style=" width: 40px">Id</th>
+                <th style=" width: 150px">Alfanumérico</th>
+                <th style=" width: 90px">Cat. Avaliação</th>
+                <th>Verificador</th>
+              </tr>
+            </ng-template>
+              <ng-template pTemplate="body" let-vermodelo>
+                <tr>
+                  <th>{{vermodelo.cdVeriMod}}</th>
+                  <th style="text-align: left">{{vermodelo.cdVerificador.codalfa}}</th>
+                  <th style="text-align: left">{{vermodelo.cdVerificador.cadNivelDeAvaliacao.sigla}}</th>
+                  <th style="text-align: left">{{vermodelo.cdVerificador.nmverificador}}</th>
+
+                  <th>
+
+                      <a pButton icon="pi pi-pencil" pTooltip="Editar Empresa" tooltipPosition="top" [routerLink]="['/modverificadoresmonitoramentotemplate', vermodelo.cdEmpresa]"></a>
+                      <button pButton icon="pi pi-trash" style="margin-left: 10px" pTooltip="Excluir Empresa" tooltipPosition="top" (click)="confirmarExclusao(empresa)"></button>
+
+                  </th>
+                </tr>
+              </ng-template>
+            </p-table>
+
+
+          </div>
+
         </div>
-
-        <div class="ui-g-4">
-          <label style="display: block">Escolha um modelo de Monitoramento: </label>
-          <p-dropdown [options]="MonitoramentoTemplate" name="MonitoramentoTemplate" [(ngModel)]="cdTemplate"
-            placeholder="Selecione" [style]="{'width':'370px'}"></p-dropdown>
-        </div>
-        <div class="ui-g-8 ">
-          <br />
-          <button type="button" style="width: 300px" (click)="pesquisarMon()"
-          pButton label="Escolher modelo de Monitoramento" ></button>
-        </div>
-
-        <div class="ui-g-1 ui-fluid">
-          <label style="display: block">Código: </label>
-          <input name="codigo" type="text" pInputText />
-        </div>
-        <div class="ui-g-3 ui-fluid">
-          <label style="display: block">Código Alfanumérico: </label>
-          <input name="codalfa" type="text" pInputText />
-        </div>
-        <div class="ui-g-4 ui-fluid">
-        <label style="display: block">Categoria de Avaliação: </label>
-        <input name="nmNivelAvaliacao" type="text" pInputText />
-      </div>
-      <div class="ui-g" style="width:250px;margin-bottom:10px">
-        <div class="ui-g-12"><p-checkbox name="group1" value="Coleta de Dados Analíticos" label="Coleta de Dados Analíticos" [(ngModel)]="selectedCities" inputId="ny"></p-checkbox></div>
-        <div class="ui-g-12"><p-checkbox name="group1" value="Coleta de Dados Agrupados" label="Coleta de Dados Agrupados" [(ngModel)]="selectedCities" inputId="sf"></p-checkbox></div>
-      </div>
-      <div class="ui-g-12 ui-fluid">
-        <label style="display: block">Verificador: </label>
-        <textarea name="nmverificador" pInputTextarea autoResize="autoResize"></textarea>
-      </div>
-
-      <div class="ui-g-2 ui-fluid">
-        <br />
-        <button pButton type="button" label="Salvar"
-          class="ui-button-raised ui-button-success"></button>
-      </div>
-  </div>
-</form>
-
-<div class="ui-g">
-  <div class="ui-g-12">
-
-
-    <p-table [value]="verificadordomodelo" [paginator]="true" [rows]="10" [responsive]="true"
-          [totalRecords]="totalRecords">
-
-      <ng-template pTemplate="header">
-        <tr>
-          <th style="width: 70px">Cód. Empresa.</th>
-
-        </tr>
-      </ng-template>
-      <ng-template pTemplate="body" let-vermodelo>
-        <tr>
-          <th>{{vermodelo.cdVeriMod}}</th>
-
-
-        </tr>
-      </ng-template>
-    </p-table>
-
-  </div>
-</div>
 
 
 </p-card>

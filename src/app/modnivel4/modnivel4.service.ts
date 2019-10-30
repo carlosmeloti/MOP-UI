@@ -19,65 +19,65 @@ export class Modnivel4Filtro {
 export class Modnivel4Service {
 
 
-  modnivel4URL = 'http://localhost:8081/modnivel4';
+  modnivel4URL = 'http://10.132.90.58:8081/modnivel4';
 
-  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_1 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=1';
-  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_2 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=2';
-  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_3 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=3';
-  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_4 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=4';
-  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_5 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=5';
+  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_1 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=1';
+  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_2 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=2';
+  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_3 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=3';
+  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_4 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=4';
+  URLmodnivel4_cdNivel1_1_cdNivel2_1_cdNivel3_5 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=1&cdNivel3=5';
 
-  URLmodnivel4_cdNivel1_1_cdNivel2_2_cdNivel3_6 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=2&cdNivel3=6';
-  URLmodnivel4_cdNivel1_1_cdNivel2_2_cdNivel3_7 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=2&cdNivel3=7';
-  URLmodnivel4_cdNivel1_1_cdNivel2_2_cdNivel3_8 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=2&cdNivel3=8';
-  URLmodnivel4_cdNivel1_1_cdNivel2_2_cdNivel3_9 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=2&cdNivel3=9';
+  URLmodnivel4_cdNivel1_1_cdNivel2_2_cdNivel3_6 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=2&cdNivel3=6';
+  URLmodnivel4_cdNivel1_1_cdNivel2_2_cdNivel3_7 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=2&cdNivel3=7';
+  URLmodnivel4_cdNivel1_1_cdNivel2_2_cdNivel3_8 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=2&cdNivel3=8';
+  URLmodnivel4_cdNivel1_1_cdNivel2_2_cdNivel3_9 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=2&cdNivel3=9';
 
-  URLmodnivel4_cdNivel1_1_cdNivel2_3_cdNivel3_10 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=3&cdNivel3=10';
-  URLmodnivel4_cdNivel1_1_cdNivel2_3_cdNivel3_11 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=3&cdNivel3=11';
-  URLmodnivel4_cdNivel1_1_cdNivel2_3_cdNivel3_12 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=3&cdNivel3=12';
-  URLmodnivel4_cdNivel1_1_cdNivel2_3_cdNivel3_13 = 'http://localhost:8081/modnivel4?cdNivel1=1&cdNivel2=3&cdNivel3=13';
+  URLmodnivel4_cdNivel1_1_cdNivel2_3_cdNivel3_10 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=3&cdNivel3=10';
+  URLmodnivel4_cdNivel1_1_cdNivel2_3_cdNivel3_11 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=3&cdNivel3=11';
+  URLmodnivel4_cdNivel1_1_cdNivel2_3_cdNivel3_12 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=3&cdNivel3=12';
+  URLmodnivel4_cdNivel1_1_cdNivel2_3_cdNivel3_13 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=1&cdNivel2=3&cdNivel3=13';
 
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_14 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=14';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_14 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=14';
 
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_15 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=15';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_16 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=16';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_17 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=17';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_18 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=18';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_19 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=19';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_20 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=20';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_21 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=21';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_22 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=22';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_23 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=23';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_24 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=24';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_25 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=25';
-  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_26 = 'http://localhost:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=26';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_15 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=15';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_16 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=16';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_17 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=17';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_18 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=18';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_19 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=19';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_20 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=20';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_21 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=21';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_22 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=22';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_23 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=23';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_24 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=24';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_25 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=25';
+  URLmodnivel4_cdNivel1_2_cdNivel2_4_cdNivel3_26 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=2&cdNivel2=4&cdNivel3=26';
 
-  URLmodnivel4_cdNivel1_3_cdNivel2_5_cdNivel3_27 = 'http://localhost:8081/modnivel4?cdNivel1=3&cdNivel2=5&cdNivel3=27';
-  URLmodnivel4_cdNivel1_3_cdNivel2_5_cdNivel3_28 = 'http://localhost:8081/modnivel4?cdNivel1=3&cdNivel2=5&cdNivel3=28';
-  URLmodnivel4_cdNivel1_3_cdNivel2_5_cdNivel3_29 = 'http://localhost:8081/modnivel4?cdNivel1=3&cdNivel2=5&cdNivel3=29';
-  URLmodnivel4_cdNivel1_3_cdNivel2_5_cdNivel3_30 = 'http://localhost:8081/modnivel4?cdNivel1=3&cdNivel2=5&cdNivel3=30';
+  URLmodnivel4_cdNivel1_3_cdNivel2_5_cdNivel3_27 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=3&cdNivel2=5&cdNivel3=27';
+  URLmodnivel4_cdNivel1_3_cdNivel2_5_cdNivel3_28 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=3&cdNivel2=5&cdNivel3=28';
+  URLmodnivel4_cdNivel1_3_cdNivel2_5_cdNivel3_29 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=3&cdNivel2=5&cdNivel3=29';
+  URLmodnivel4_cdNivel1_3_cdNivel2_5_cdNivel3_30 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=3&cdNivel2=5&cdNivel3=30';
 
-  URLmodnivel4_cdNivel1_3_cdNivel2_6_cdNivel3_31 = 'http://localhost:8081/modnivel4?cdNivel1=3&cdNivel2=6&cdNivel3=31';
-  URLmodnivel4_cdNivel1_3_cdNivel2_6_cdNivel3_32 = 'http://localhost:8081/modnivel4?cdNivel1=3&cdNivel2=6&cdNivel3=32';
+  URLmodnivel4_cdNivel1_3_cdNivel2_6_cdNivel3_31 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=3&cdNivel2=6&cdNivel3=31';
+  URLmodnivel4_cdNivel1_3_cdNivel2_6_cdNivel3_32 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=3&cdNivel2=6&cdNivel3=32';
 
-  URLmodnivel4_cdNivel1_4_cdNivel2_7_cdNivel3_33 = 'http://localhost:8081/modnivel4?cdNivel1=4&cdNivel2=7&cdNivel3=33';
-  URLmodnivel4_cdNivel1_4_cdNivel2_7_cdNivel3_34 = 'http://localhost:8081/modnivel4?cdNivel1=4&cdNivel2=7&cdNivel3=34';
+  URLmodnivel4_cdNivel1_4_cdNivel2_7_cdNivel3_33 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=4&cdNivel2=7&cdNivel3=33';
+  URLmodnivel4_cdNivel1_4_cdNivel2_7_cdNivel3_34 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=4&cdNivel2=7&cdNivel3=34';
 
-  URLmodnivel4_cdNivel1_4_cdNivel2_8_cdNivel3_35 = 'http://localhost:8081/modnivel4?cdNivel1=4&cdNivel2=8&cdNivel3=35';
-  URLmodnivel4_cdNivel1_4_cdNivel2_8_cdNivel3_36 = 'http://localhost:8081/modnivel4?cdNivel1=4&cdNivel2=8&cdNivel3=36';
-  URLmodnivel4_cdNivel1_4_cdNivel2_8_cdNivel3_37 = 'http://localhost:8081/modnivel4?cdNivel1=4&cdNivel2=8&cdNivel3=37';
-  URLmodnivel4_cdNivel1_4_cdNivel2_8_cdNivel3_38 = 'http://localhost:8081/modnivel4?cdNivel1=4&cdNivel2=8&cdNivel3=38';
+  URLmodnivel4_cdNivel1_4_cdNivel2_8_cdNivel3_35 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=4&cdNivel2=8&cdNivel3=35';
+  URLmodnivel4_cdNivel1_4_cdNivel2_8_cdNivel3_36 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=4&cdNivel2=8&cdNivel3=36';
+  URLmodnivel4_cdNivel1_4_cdNivel2_8_cdNivel3_37 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=4&cdNivel2=8&cdNivel3=37';
+  URLmodnivel4_cdNivel1_4_cdNivel2_8_cdNivel3_38 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=4&cdNivel2=8&cdNivel3=38';
 
-  URLmodnivel4_cdNivel1_5_cdNivel2_9_cdNivel3_39 = 'http://localhost:8081/modnivel4?cdNivel1=5&cdNivel2=9&cdNivel3=39';
-  URLmodnivel4_cdNivel1_5_cdNivel2_9_cdNivel3_40 = 'http://localhost:8081/modnivel4?cdNivel1=5&cdNivel2=9&cdNivel3=40';
+  URLmodnivel4_cdNivel1_5_cdNivel2_9_cdNivel3_39 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=5&cdNivel2=9&cdNivel3=39';
+  URLmodnivel4_cdNivel1_5_cdNivel2_9_cdNivel3_40 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=5&cdNivel2=9&cdNivel3=40';
 
 
-  URLmodnivel4_cdNivel1_5_cdNivel2_10_cdNivel3_41 = 'http://localhost:8081/modnivel4?cdNivel1=5&cdNivel2=10&cdNivel3=41';
-  URLmodnivel4_cdNivel1_5_cdNivel2_10_cdNivel3_42 = 'http://localhost:8081/modnivel4?cdNivel1=5&cdNivel2=10&cdNivel3=42';
+  URLmodnivel4_cdNivel1_5_cdNivel2_10_cdNivel3_41 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=5&cdNivel2=10&cdNivel3=41';
+  URLmodnivel4_cdNivel1_5_cdNivel2_10_cdNivel3_42 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=5&cdNivel2=10&cdNivel3=42';
 
-  URLmodnivel4_cdNivel1_6_cdNivel2_11_cdNivel3_43 = 'http://localhost:8081/modnivel4?cdNivel1=6&cdNivel2=11&cdNivel3=43';
+  URLmodnivel4_cdNivel1_6_cdNivel2_11_cdNivel3_43 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=6&cdNivel2=11&cdNivel3=43';
 
-  URLmodnivel4_cdNivel1_6_cdNivel2_12_cdNivel3_44 = 'http://localhost:8081/modnivel4?cdNivel1=6&cdNivel2=12&cdNivel3=44';
+  URLmodnivel4_cdNivel1_6_cdNivel2_12_cdNivel3_44 = 'http://10.132.90.58:8081/modnivel4?cdNivel1=6&cdNivel2=12&cdNivel3=44';
 
 
   constructor(private http: Http) { }
