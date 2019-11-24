@@ -45,11 +45,11 @@ export class CadtipodeverificadorService {
     })
 
     };
-    excluir(codigo: number): Promise<void> {
+    excluir(cdTipoDeVerificador: number): Promise<void> {
       const headers = new Headers;
       headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
 
-      return this.http.delete(`${this.cadtipodeverificadorURL}/${codigo}`, { headers })
+      return this.http.delete(`${this.cadtipodeverificadorURL}/${cdTipoDeVerificador}`, { headers })
         .toPromise()
         .then(() => null);
     }

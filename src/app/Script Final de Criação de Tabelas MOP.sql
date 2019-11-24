@@ -2699,4 +2699,3 @@ INSERT INTO usuario_permissao (codigo_usuario, codigo_permissao) values (2, 14);
 INSERT INTO usuario_permissao (codigo_usuario, codigo_permissao) values (2, 17);
 
 
-

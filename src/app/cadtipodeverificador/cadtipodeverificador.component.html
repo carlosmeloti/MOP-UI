@@ -81,7 +81,7 @@
                     <th>{{tipodeverificador.rotuloNivel5}}</th>
                     <th>
                         <a pButton icon="pi pi-pencil" pTooltip="Editar Tipo de Verificador" tooltipPosition="top" [routerLink]="['/cadtipodeverificador', tipodeverificador.cdTipoDeVerificador]"></a>
-                        <button pButton icon="pi pi-trash" style="margin-left: 10px" pTooltip="Excluir Tipo de Verificador" tooltipPosition="top"></button>
+                        <button pButton icon="pi pi-trash" style="margin-left: 10px" pTooltip="Excluir Tipo de Verificador" tooltipPosition="top" (click)="confirmarExclusao(tipodeverificador)"></button>
                     </th>
                   </tr>
                 </ng-template>

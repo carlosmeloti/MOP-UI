@@ -87,7 +87,7 @@ export class CadtipodeverificadorComponent {
 
   excluir(cadtipodeverificador: any){
 
-    this.cadtipodeverificadorService.excluir(cadtipodeverificador.codigo)
+    this.cadtipodeverificadorService.excluir(cadtipodeverificador.cdTipoDeVerificador)
       .then(() => {
         if (this.grid.first === 0) {
           this.pesquisar();
