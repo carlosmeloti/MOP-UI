@@ -13,7 +13,7 @@ export class ModverificadoresdomodeloFiltro{
 @Injectable()
 export class ModverificadoresdomodeloService {
 
-  verificadoresdomodelourl = 'http://10.132.90.58:8081/modverificadoresmonitoramentotemplate';
+  verificadoresdomodelourl = 'http://localhost:8081/modverificadoresmonitoramentotemplate';
 
   constructor(private http: Http) { }
 

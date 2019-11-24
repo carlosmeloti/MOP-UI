@@ -29,7 +29,7 @@
         </div>
         <div  class="ui-g-2 ui-fluid">
           <br />
-          <button pButton type="submit" label="Salvar" class="ui-button-raised ui-button-success" [disabled]="!editando"></button>
+          <button pButton type="submit" label="Salvar" class="ui-button-raised ui-button-success" [disabled]="!tipodeverificadoraSalvar.nmTipoDeVerificador"></button>
         </div>
 
       <div *ngIf="editando" class="ui-g-2 ui-fluid ">
@@ -60,7 +60,7 @@
                   <tr>
                     <th style=" width: 70px">Código</th>
                     <th>Tipo Verificador</th>
-                    <th style=" width: 100px">Qtd. Níveis</th>
+                    <!--<th style=" width: 100px">Qtd. Níveis</th>-->
                     <th style=" width: 100px"> Nível 1</th>
                     <th style=" width: 100px">Nível 2</th>
                     <th style=" width: 100px">Nível 3</th>
@@ -73,7 +73,7 @@
                   <tr>
                     <th>{{tipodeverificador.cdTipoDeVerificador}}</th>
                     <th style="text-align: left">{{tipodeverificador.nmTipoDeVerificador}}</th>
-                    <th>{{tipodeverificador.nrNiveis}}</th>
+                    <!--<th>{{tipodeverificador.nrNiveis}}</th>-->
                     <th>{{tipodeverificador.rotuloNivel1}}</th>
                     <th>{{tipodeverificador.rotuloNivel2}}</th>
                     <th>{{tipodeverificador.rotuloNivel3}}</th>
