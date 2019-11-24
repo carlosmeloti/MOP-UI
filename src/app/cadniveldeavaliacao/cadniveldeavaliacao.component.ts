@@ -53,6 +53,31 @@ export class CadniveldeavaliacaoComponent  {
       .catch(erro => this.errorHandler.handle(erro));
   }
 
+  confirmarExclusao(cadnivelavaliacao: any) {
+    this.confirmation.confirm( {
+      message: 'Tem certeza que deseja excluir?',
+      accept: () =>{
+        this.excluir(cadnivelavaliacao);
+      }
+    });
+  }
+
+  excluir(cadnivelavaliacao: any){
+
+    this.cadniveldeavaliacaoService.excluir(cadnivelavaliacao.cdNivelDeAvaliacao)
+    .then(() => {
+      if (this.grid.first === 0) {
+        this.pesquisar();
+      } else {
+        this.grid.first = 0;
+        this.pesquisar();
+      }
+      this.toasty.success('Nível de Avaliação excluído com sucesso!');
+    })
+    .catch(erro => this.errorHandler.handle(erro));
+
+  }
+
 
   pesquisar(page = 0){
 
@@ -75,9 +100,28 @@ export class CadniveldeavaliacaoComponent  {
       if(this.editando){
         this.confirmarAlterar(form);
       } else {
-
+        this.confirmaSalvar(form);
       }
 
+    }
+
+    confirmaSalvar(cadnivelavaliacao: any) {
+      this.confirmation.confirm( {
+        message: 'Tem certeza que deseja salvar?',
+        accept: () =>{
+          this.adicionarNivelDeAvaliacao(cadnivelavaliacao);
+        }
+      });
+    }
+    adicionarNivelDeAvaliacao(form: FormControl){
+      this.cadniveldeavaliacaoService.adicionar(this.cadnivelavaliacaoSalvar)
+        .then(() => {
+          this.toasty.success("Empresa cadastrada com sucesso!");
+          form.reset();
+          this.cadnivelavaliacaoSalvar = new Cadniveldeavaliacao();
+          this.pesquisar();
+        })
+        .catch(erro => this.errorHandler.handle(erro));
     }
 
         confirmarAlterar(niveldeavaliacao: any) {

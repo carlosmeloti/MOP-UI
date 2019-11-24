@@ -25,7 +25,7 @@
 
         <div  class="ui-g-2 ui-fluid">
             <br />
-            <button pButton type="submit" label="Salvar" class="ui-button-raised ui-button-success" [disabled]="!editando"></button>
+            <button pButton type="submit" label="Salvar" class="ui-button-raised ui-button-success" [disabled]="!cadnivelavaliacaoSalvar.nmNivelDeAvaliacao"></button>
           </div>
 
         <div *ngIf="editando" class="ui-g-2 ui-fluid ">
@@ -63,7 +63,7 @@
                     <th style="text-align: left">{{nivelavaliacao.txDescricao}}</th>
                     <th>
                         <a pButton icon="pi pi-pencil" pTooltip="Editar Categoria de Avaliação" tooltipPosition="top" [routerLink]="['/cadniveldeavaliacao', nivelavaliacao.cdNivelDeAvaliacao]"></a>
-                        <button pButton icon="pi pi-trash" style="margin-left: 10px" pTooltip="Excluir Categoria de Avaliação" tooltipPosition="top"></button>
+                        <button pButton icon="pi pi-trash" style="margin-left: 10px" pTooltip="Excluir Categoria de Avaliação" tooltipPosition="top" (click)="confirmarExclusao(nivelavaliacao)"></button>
                     </th>
                   </tr>
                 </ng-template>

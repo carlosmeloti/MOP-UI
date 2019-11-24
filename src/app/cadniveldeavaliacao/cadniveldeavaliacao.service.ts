@@ -69,6 +69,17 @@ export class CadniveldeavaliacaoService {
        });
  }
 
+
+ adicionar(cadniveldeavaliacao: Cadniveldeavaliacao): Promise<Cadniveldeavaliacao> {
+  const headers = new Headers;
+  headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
+  headers.append('Content-Type', 'application/json');
+
+  return this.http.post(this.cadniveldeavaliacaourl, JSON.stringify(cadniveldeavaliacao), { headers })
+    .toPromise()
+    .then(response => response.json());
+}
+
    buscarPorCodigo(cdNivelDeAvaliacao: number): Promise<Cadniveldeavaliacao> {
      const headers = new Headers();
      headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
@@ -81,5 +92,14 @@ export class CadniveldeavaliacaoService {
          return cadniveldeavaliacao;
        });
  }
+
+ excluir(cdNivelDeAvaliacao: number): Promise<void> {
+  const headers = new Headers;
+  headers.append('Authorization', 'Basic YWRtaW46YWRtaW4=');
+
+  return this.http.delete(`${this.cadniveldeavaliacaourl}/${cdNivelDeAvaliacao}`, { headers })
+    .toPromise()
+    .then(() => null);
+}
 
 }
